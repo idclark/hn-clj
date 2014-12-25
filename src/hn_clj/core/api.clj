@@ -1,12 +1,12 @@
 (ns hn-clj.api
-  (:require [clj-http-lite.client :as client]
+  (:require [clj-http.lite.client :as client]
             [cheshire.core :as json]))
 
 (def base-url "https://hacker-news.firebaseio.com/v0")
 
 (defn- get-json
   [url]
-  (json/parse-string (:body) (client/get (str url ".json"))))
+  (json/parse-string (:body (client/get (str url ".json")))))
 
 (defn get-front-page-ids
   []
@@ -14,7 +14,7 @@
 
 (defn get-item
   [id]
-  (get-json (str base-url "/item" id)))
+  (get-json (str base-url "/item/" id)))
 
 (defn get-nested-items
   [id]
