@@ -1,6 +1,6 @@
 # hn-clj
 
-FIXME
+A clone of the Y Combinator site using Clojure and the firebase API
 
 ## Prerequisites
 
