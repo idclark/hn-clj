@@ -10,3 +10,4 @@ pom.xml.asc
 /.nrepl-port
 /project.clj~
 /src/hn_clj/core/api.clj~
+/src/hn_clj/core/controllers/story.clj~
