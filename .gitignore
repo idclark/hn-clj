@@ -11,3 +11,4 @@ pom.xml.asc
 /project.clj~
 /src/hn_clj/core/api.clj~
 /src/hn_clj/core/controllers/story.clj~
+/src/hn_clj/core/views/index.clj~
