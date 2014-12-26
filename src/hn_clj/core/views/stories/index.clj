@@ -1,6 +1,6 @@
-(ns hn-clj.views.stories.index
-  (:require [hn-clj.views.layout :refer [main-layout]]
-            [hn-clj.views.utilities :as util]))
+(ns hn-clj.core.views.stories.index
+  (:require [hn-clj.core.views.layout :refer [main-layout]]
+            [hn-clj.core.views.utilities :as util]))
 
 (defn story-html
   [story]
@@ -11,6 +11,7 @@
     (util/user-link (story "by") (story "by")) " | "
     (util/story-link
      (str (count (story "kids")) " comments") (story "id"))]])
+
 (defn page
   [stories]
   (main-layout {:title "Hacker News Clone"}

@@ -1,13 +1,13 @@
-(ns hn-clj.controllers.story
-  (require [hn-clj.views.index :as index-view]
-           [hn-clj.views.show :as show-view]
-           [hn-clj.api :as api]))
+(ns hn-clj.core.controllers.story
+  (require [hn-clj.core.views.stories.index :as index-view]
+           [hn-clj.core.views.stories.show :as show-view]
+           [hn-clj.core.api :as api]))
 
 (defn index
   [limit]
   (if (nil? limit)
-    (index-view/page (api/get-front-page))
-    (index-view/page (api/get-front-page limit))))
+    (index-view/page (api/get-frontpage))
+    (index-view/page (api/get-frontpage limit))))
 
 (defn show-story
   [id]

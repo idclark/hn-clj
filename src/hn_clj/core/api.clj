@@ -1,4 +1,4 @@
-(ns hn-clj.api
+(ns hn-clj.core.api
   (:require [clj-http.lite.client :as client]
             [cheshire.core :as json]))
 
