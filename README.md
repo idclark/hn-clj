@@ -1,6 +1,6 @@
 # hn-clj
 
-A clone of the Y Combinator site using Clojure and the firebase API
+A clone of the Y Combinator site using Clojure and the official Firebase API
 
 ## Prerequisites
 
