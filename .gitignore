@@ -15,3 +15,7 @@ pom.xml.asc
 /src/hn_clj/core/views/layout.clj~
 /src/hn_clj/core/views/utililities.clj~
 /src/hn_clj/core/views/utilities.clj~
+/src/hn_clj/core/views/stories/index.clj~
+/src/hn_clj/core/views/stories/show.clj~
+/src/hn_clj/core/controllers/users.clj~
+/src/hn_clj/core/views/users/show.clj~
