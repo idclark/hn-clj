@@ -13,7 +13,7 @@
   [:div {:class "comment"}
    (util/user-link [:h4 (comment "by") (comment "by")])
    [:p (comment "text")]
-   [:url (map comment-html (comment "comments"))]])
+   [:ul (map comment-html (comment "comments"))]])
 
 (defn comment-section
   [comments]

@@ -1,0 +1,16 @@
+root {
+    font-family: 'Verdana';
+    font-size: 12px;
+}
+
+body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.main-banner {
+    height: 30px;
+    font-family: 12px;
+    margin-top: 10px;
+    white-space: nowrap;
+}
