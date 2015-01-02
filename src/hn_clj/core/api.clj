@@ -6,7 +6,8 @@
 
 (defn- get-json
   [url]
-  (json/parse-string (:body (client/get (str url ".json")))))
+  (let [response (json/parse-string (:body (client/get (str url ".json"))))]
+    (clojure.walk/keywordize-keys response)))
 
 (defn get-front-page-ids
   []
@@ -19,12 +20,12 @@
 (defn get-nested-items
   [id]
   (let [item (get-item id)]
-    (assoc item "comments" (map get-nested-items (item "kids")))))
+    (assoc item :comments (map get-nested-items (item :kids)))))
 
 (defn get-user
   [uname]
   (let [user (get-json (str base-url "/user/" uname))]
-    (assoc user "stories" (map get-item (user "submitted")))))
+    (assoc user :stories (map get-item (user :submitted)))))
 
 (defn get-frontpage
   ([]

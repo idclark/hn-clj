@@ -5,15 +5,15 @@
 (defn story-header
   [story]
   [:header {:class "story-header"}
-   (util/link [:h2 (story "title")] (story "url"))
-   (util/user-link [:h3 "By " (story "by")] (story "by"))])
+   (util/link [:h2 (story :title)] (story :url))
+   (util/user-link [:h3 "By " (story :by)] (story :by))])
 
 (defn comment-html
   [comment]
   [:div {:class "comment"}
-   (util/user-link [:h4 (comment "by")] (comment "by"))
-   [:p (comment "text")]
-   [:ul (map comment-html (comment "comments"))]])
+   (util/user-link [:h4 (comment :by)] (comment :by))
+   [:p (comment :text)]
+   [:ul (map comment-html (comment :comments))]])
 
 (defn comment-section
   [comments]
@@ -21,6 +21,6 @@
 
 (defn page
   [story]
-  (main-layout {:title (str "HNClone: " (story "title"))}
+  (main-layout {:title (str "HNClone: " (story :title))}
                (story-header story)
-               (comment-section (story "comments"))))
+               (comment-section (story :comments))))

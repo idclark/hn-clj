@@ -5,12 +5,12 @@
 (defn story-html
   [story]
   [:li {:class "story"}
-   (util/link (story "title") (story "url"))
+   (util/link (story :title) (story :url))
    [:p
     (story "score") " points by "
-    (util/user-link (story "by") (story "by")) " | "
+    (util/user-link (story :by) (story :by)) " | "
     (util/story-link
-     (str (count (story "kids")) " comments") (story "id"))]])
+     (str (count (story :kids)) " comments") (story :id))]])
 
 (defn page
   [stories]

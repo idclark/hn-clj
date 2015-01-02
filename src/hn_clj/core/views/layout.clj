@@ -7,7 +7,7 @@
 (defn main-banner
   []
   [:header {:class "main-banner"}
-   [:h2 "Hacker News Clone"]
+   [:h1 "Hacker News Clone"]
    (util/link "new" "/newest") " | "
     (util/link "threads" "https://news.ycombinator.com/threads") " | "
     (util/link "comments" "https://news.ycombinator.com/comments") " | "
