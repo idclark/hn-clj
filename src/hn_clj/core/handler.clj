@@ -8,7 +8,7 @@
 
 (defroutes app-routes
   (GET "/" [limit] (story/index limit))
-  (GET "stories/:id" [id] (story/show-story id))
+  (GET "/stories/:id" [id] (story/show-story id))
   (GET "/users/:username" [username] (users/show username)))
 
 (def app

@@ -11,7 +11,7 @@
 (defn comment-html
   [comment]
   [:div {:class "comment"}
-   (util/user-link [:h4 (comment "by") (comment "by")])
+   (util/user-link [:h4 (comment "by")] (comment "by"))
    [:p (comment "text")]
    [:ul (map comment-html (comment "comments"))]])
 
