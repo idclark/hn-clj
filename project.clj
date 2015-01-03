@@ -1,6 +1,6 @@
 (defproject hn-clj "0.1.1"
   :description "A HackerNews Clone using the Firebase API"
-  :url "http://example.com/FIXME"
+  :url "http://github.com/idclark/hn-clj"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [compojure "1.3.1"]
@@ -12,4 +12,5 @@
   :ring {:handler hn-clj.core.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring-mock "0.1.5"]]}})
+                        [ring-mock "0.1.5"]]}}
+)
