@@ -20,3 +20,4 @@ pom.xml.asc
 /src/hn_clj/core/controllers/users.clj~
 /src/hn_clj/core/views/users/show.clj~
 /resources/public/css/main.css~
+/Procfile~
