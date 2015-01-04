@@ -1,4 +1,5 @@
 (ns hn-clj.core.handler
+  (:gen-class)
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [compojure.handler :as handler]

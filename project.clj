@@ -10,9 +10,7 @@
                  [cheshire "5.4.0"]
                  [hiccup "1.0.5"]]
   :plugins [[lein-ring "0.8.13"]]
-  :main hn-clj.core.handler
   :ring {:handler hn-clj.core.handler/app}
-  :profiles
-  {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring-mock "0.1.5"]]}}
-  )
+  :profiles {:uberjar {:aot :all}}
+  :uberjar-name "hn-clj.jar"
+  :main hn-clj.core.handler)
