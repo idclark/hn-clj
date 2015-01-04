@@ -3,6 +3,7 @@
             [compojure.route :as route]
             [compojure.handler :as handler]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [ring.adapter.jetty :as jetty]
             [hn-clj.core.controllers.story :as story]
             [hn-clj.core.controllers.users :as users]
             ))
@@ -12,5 +13,6 @@
   (GET "/stories/:id" [id] (story/show-story id))
   (GET "/users/:username" [username] (users/show username)))
 
-(def app
-  (wrap-defaults app-routes site-defaults))
+(defn -main []
+  (let [port (Integer/parseInt (get (System/getenv) "PORT" "3000"))]
+    (jetty/run-jetty app-routes {:port port})))
