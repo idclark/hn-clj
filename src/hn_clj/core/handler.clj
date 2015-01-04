@@ -12,7 +12,8 @@
 (defroutes app-routes
   (GET "/" [limit] (story/index limit))
   (GET "/stories/:id" [id] (story/show-story id))
-  (GET "/users/:username" [username] (users/show username)))
+  (GET "/users/:username" [username] (users/show username))
+  (route/resources "/"))
 
 (defn -main []
   (let [port (Integer/parseInt (get (System/getenv) "PORT" "3000"))]
