@@ -11,7 +11,7 @@
 (defn submitted-html
   [story]
   [:div {:class "submitted-story"}
-   (util/story-link [:h4 (story :title)] (story :id))])
+   (util/story-link [:p (story :title)] (story :id))])
 
 (defn submitted-section
   [stories]

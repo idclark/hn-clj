@@ -11,7 +11,7 @@ body {
 .main-banner {
     height: 30px;
     font-family: 12px;
-    margin-top: 10px;
+    margin-top: 7px;
     white-space: nowrap;
     background-color: #FF3300;
 }
@@ -52,8 +52,12 @@ body {
   text-decoration: none;
 }
 
-.story-list {
-    background-color:#F5F5DC;
+.content {
+    background-color: #FFFFF0;
+}
+
+.content a {
+    color: black;
 }
 
 .story-list a {

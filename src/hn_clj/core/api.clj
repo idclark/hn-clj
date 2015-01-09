@@ -20,15 +20,15 @@
 (defn get-nested-items
   [id]
   (let [item (get-item id)]
-    (assoc item :comments (map get-nested-items (item :kids)))))
+    (assoc item :comments (pmap get-nested-items (item :kids)))))
 
 (defn get-user
   [uname]
   (let [user (get-json (str base-url "/user/" uname))]
-    (assoc user :stories (map get-item (user :submitted)))))
+    (assoc user :stories (pmap get-item (user :submitted)))))
 
 (defn get-frontpage
   ([]
-   (map get-item (take 30 (get-front-page-ids))))
+   (get-frontpage 30))
   ([limit]
-   (map get-item (take (Integer. limit) (get-front-page-ids)))))
+   (pmap get-item (take limit (get-front-page-ids)))))
