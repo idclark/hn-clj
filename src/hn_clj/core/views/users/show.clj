@@ -10,8 +10,8 @@
    [:p (str "Created: " (util/days-delta (user :created)) " days ago")]
    [:p "avg: " (user :avg)]
    [:p "about: " (user :about)]
-   [:p (util/user-link "Submissions" (user :id))]
-   [:p (util/user-link "Comments" (user :id))]])
+   [:p (util/user-submissions "Submissions" (user :id))]
+   [:p (util/user-comments "Comments" (user :id))]])
 
 (defn submitted-html
   [story]
@@ -22,7 +22,8 @@
   [stories]
   (map submitted-html stories))
 
-(defn user-page [user]
+(defn user-page
+  [user]
   (main-layout {:title (str "HN: " (user :id))}
                (user-header user)))
 
@@ -32,19 +33,21 @@
                [:h4 (user :id) " 's submissions"]
                (submitted-section (user :stories))))
 
-(defn comments-html
+(defn comment-html
   [story]
-  (main-layout {:title "comments"}
-               ;[:h4 (str (user :id ) " 's comments")]
-               [:div {:class "comment-header"}
-                (str (util/user-link (story :by) (story :by) " ")
-                     (util/days-delta (story :time) " days ago |")
-                     (util/link "link |" (story :url)) "on "
-                     (util/story-link (story :title) (story :id)))]
-               [:div {:class "comment-text"}
-                [:p (story :text)]]))
+  [:div {:class "comment header"}
+   (util/user-link (story :by) (story :by)) " "
+   (util/days-delta (story :time)) " days ago | "
+   (util/link "link" (story :url)) " | on "
+   (util/story-link (story :title) (story :id))
+   [:p (story :text)]])
+
+(defn all-comments
+  [stories]
+  (map comment-html stories))
 
 (defn comments-page
-  [comments]
-  [:h4 (str (user :id ) " 's comments")]
-  (map comments-html comments))
+  [user]
+  (main-layout {:title "comments"}
+               [:h4 (str (user :id) " 's comments")]
+               (all-comments (user :stories))))

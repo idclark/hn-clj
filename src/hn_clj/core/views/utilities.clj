@@ -8,9 +8,18 @@
   [txt uname]
   (link txt (str "/users/" uname)))
 
+(defn user-comments
+  [txt uname]
+  (link txt (str "/users/" uname "/comments")))
+
+(defn user-submissions
+  [txt uname]
+  (link txt (str "/users/" uname "/submitted")))
+
 (defn story-link
   [txt id]
   (link txt (str "/stories/" id)))
+
 
 (defn days-delta
   [secs]
