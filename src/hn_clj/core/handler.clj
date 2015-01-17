@@ -12,7 +12,9 @@
 (defroutes app-routes
   (GET "/" [limit] (story/index limit))
   (GET "/stories/:id" [id] (story/show-story id))
-  (GET "/users/:username" [username] (users/show username))
+  (GET "/users/:username" [username] (users/show-user username))
+  (GET "/users/:username/comments" [username] (users/show-comms username))
+  (GET "/users/:username/submitted" [username] (users/show-subbs username))
   (route/resources "/"))
 
 (defn -main []

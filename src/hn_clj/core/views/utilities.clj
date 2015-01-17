@@ -11,3 +11,10 @@
 (defn story-link
   [txt id]
   (link txt (str "/stories/" id)))
+
+(defn days-delta
+  [secs]
+  (let [current (quot (System/currentTimeMillis) 1000)
+        day-secs (* 24 (* 60 60))
+        delta (- current secs)]
+    (int (/ delta day-secs))))
