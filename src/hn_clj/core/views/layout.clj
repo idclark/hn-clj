@@ -29,7 +29,7 @@
   (html5
    [:head
     [:title title]
-    (include-js "/js/main.js")
+    (include-js "/js/tm.js")
     (include-css "/css/main.css")]
    [:body
     (main-banner)
